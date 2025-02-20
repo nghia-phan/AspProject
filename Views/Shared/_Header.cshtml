@@ -1,0 +1,75 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">
+                Library
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")"
+                           asp-area="" asp-controller="Home" asp-action="Index">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Privacy" ? "active" : "")"
+                           asp-area="" asp-controller="Home" asp-action="Privacy">
+                            Privacy
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Devices
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Support
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Auth" && ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "active" : "")"
+                           asp-area="" asp-controller="Auth" asp-action="Login">
+                            Login
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle bg-transparent border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-user"></i>
+                            </button>
+                            <ul class="dropdown-menu bg-light" style="left: -100%;">
+                                <li>
+                                    <a class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Member" && ViewContext.RouteData.Values["Action"].ToString() == "Profile" ? "dropdown-item active" : "dropdown-item")"
+                                asp-area="" 
+                                asp-controller="Member" asp-action="Profile">Info User</a>
+                                </li>
+                                <li>
+                                    <a class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Member" && ViewContext.RouteData.Values["Action"].ToString() == "BorrowHistory" ? "dropdown-item active" : "dropdown-item")"
+                                asp-area="" 
+                                asp-controller="Member" asp-action="BorrowHistory">Borrow History</a>
+                                </li>
+                                <li>
+                                    <a class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Member" && ViewContext.RouteData.Values["Action"].ToString() == "Penalty" ? "dropdown-item active" : "dropdown-item")"
+                                asp-area="" 
+                                asp-controller="Member" asp-action="Penalty">Penalty History</a>
+                                </li>
+                                <li>
+                                    <a class="text-danger @(ViewContext.RouteData.Values["Controller"].ToString() == "Member" && ViewContext.RouteData.Values["Action"].ToString() == "Logout" ? "dropdown-item active" : "dropdown-item")"
+                                asp-area="" 
+                                asp-controller="Member" asp-action="Logout">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

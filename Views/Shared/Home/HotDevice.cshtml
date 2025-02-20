@@ -1,0 +1,17 @@
+<div class="mt-4">
+    <h1 class="text-center">Hot Device</h1>
+
+    @* list device hot *@
+    <div class="container row mx-auto">
+        @{
+
+        var marks = Enumerable.Range(0,5);        
+
+        foreach (var item in marks)
+        {
+            @await Html.PartialAsync("Device/DeviceItem")
+        }
+
+        }
+    </div>
+</div>

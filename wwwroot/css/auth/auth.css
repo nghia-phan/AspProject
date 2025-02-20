@@ -1,0 +1,9 @@
+.container {
+  form {
+    .password-container {
+      i:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
